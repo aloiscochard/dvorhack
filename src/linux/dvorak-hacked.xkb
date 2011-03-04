@@ -1,0 +1,111 @@
+// based on a keyboard map from an 'xkb/symbols/dk' file
+//
+// $XFree86: xc/programs/xkbcomp/symbols/dvorak,v 1.5 2004/01/03 16:35:07 herrb Exp $
+
+partial alphanumeric_keys
+xkb_symbols "dvorak" {
+
+    name[Group1]= "USA - Dvorak";
+
+    // Alphanumeric section
+
+    key <TLDE> { [       grave,	asciitilde, dead_grave, dead_tilde	] };
+
+    key <AE01> { [	    exclam,	9 		]	};
+    key <AE02> { [	    bracketleft,	7		]	};
+    key <AE03> { [	    braceleft,	5	]	};
+    key <AE04> { [	    parenleft, 	3	]	};
+    key <AE05> { [	    ampersand,	1		]	};
+    key <AE06> { [	    numbersign,	0, dead_circumflex, dead_circumflex]	};
+    key <AE07> { [	    parenright,	2	]	};
+    key <AE08> { [	    braceright,	4	]	};
+    key <AE09> { [	    bracketright,	6, dead_grave]	};
+    key <AE10> { [	    asterisk,	8	]	};
+    key <AE11> { [ dollar,	at	]	};
+    key <AE12> { [ percent, asciicircum, dead_tilde] };
+
+    key <AD01> { [  apostrophe,	quotedbl, dead_acute, dead_diaeresis	] };
+    key <AD02> { [	comma,	less,   dead_cedilla, dead_caron	] };
+    key <AD03> { [      period,	greater, dead_abovedot, periodcentered	] };
+    key <AD04> { [	    p,	P		]	};
+    key <AD05> { [	    y,	Y		]	};
+    key <AD06> { [	    f,	F		]	};
+    key <AD07> { [	    g,	G		]	};
+    key <AD08> { [	    c,	C		]	};
+    key <AD09> { [	    r,	R		]	};
+    key <AD10> { [	    l,	L		]	};
+    key <AD11> { [	slash,	question	]	};
+    key <AD12> { [	equal,	plus		]	};
+
+    key <AC01> { [	    a,	A 		]	};
+    key <AC02> { [	    o,	O		]	};
+    key <AC03> { [	    e,	E		]	};
+    key <AC04> { [	    u,	U		]	};
+    key <AC05> { [	    i,	I		]	};
+    key <AC06> { [	    d,	D		]	};
+    key <AC07> { [	    h,	H		]	};
+    key <AC08> { [	    t,	T		]	};
+    key <AC09> { [	    n,	N		]	};
+    key <AC10> { [	    s,	S		]	};
+    key <AC11> { [	minus,	underscore	]	};
+
+    key <AB01> { [   semicolon,	colon, dead_ogonek, dead_doubleacute ] };
+    key <AB02> { [	    q,	Q		]	};
+    key <AB03> { [	    j,	J		]	};
+    key <AB04> { [	    k,	K		]	};
+    key <AB05> { [	    x,	X		]	};
+    key <AB06> { [	    b,	B		]	};
+    key <AB07> { [	    m,	M		]	};
+    key <AB08> { [	    w,	W		]	};
+    key <AB09> { [	    v,	V		]	};
+    key <AB10> { [	    z,	Z		]	};
+
+    key <BKSL> { [  backslash,  bar             ]       };
+};
+
+// Dvorak international
+// Stephane Magnenat (stephane at magnenat dot net, http://stephane.magnenat.net)
+// Based on information from http://www.poupinou.org/dvorak/index.html
+//
+//  `   1   2   3   4   5   6   7   8   9   0   [   ]   \
+//                  €
+//
+//      '   ,   .   p   y   f   g   c   r   l   /   =
+//          ä   ê   ë   ü           ç
+//
+//      a   o   e   u   i   d   h   t   n   s   -
+//      à   ô   é   û   î                   ß
+//
+//      ;   q   j   k   x   b   m   w   v   z
+//      â   ö   è   ù   ï
+
+partial alphanumeric_keys
+xkb_symbols "dvorak-intl" {
+
+    name[Group1]= "USA - Dvorak international";
+
+    include "us(dvorak)"
+
+    key <AE04> { [         parenleft, 	3,    EuroSign ] };
+
+    key <AD02> { [     comma,    less,  adiaeresis,       dead_caron ] };
+    key <AD03> { [    period, greater, ecircumflex,   periodcentered	] };
+    key <AD04> { [         p,       P,  ediaeresis,     dead_cedilla ] };
+    key <AD05> { [         y,       Y,  udiaeresis ] };
+    key <AD08> { [         c,       C,    ccedilla,    dead_abovedot ] };
+
+    key <AC01> { [         a,       A,      agrave ] };
+    key <AC02> { [         o,       O, ocircumflex ] };
+    key <AC03> { [         e,       E,      eacute ] };
+    key <AC04> { [         u,       U, ucircumflex ] };
+    key <AC05> { [         i,       I, icircumflex ] };
+    key <AC10> { [         s,       S,      ssharp ] };
+
+    key <AB01> { [ semicolon,   colon, acircumflex ] };
+    key <AB02> { [         q,       Q,  odiaeresis,      dead_ogonek ] };
+    key <AB03> { [         j,       J,      egrave, dead_doubleacute ] };
+    key <AB04> { [         k,       K,      ugrave ] };
+    key <AB05> { [         x,       X,  idiaeresis ] };
+
+    include "level3(ralt_switch)"
+};
