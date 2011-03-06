@@ -1,0 +1,12 @@
+body {
+    font: normal 12px Lucida Grande, Verdana;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+#box {
+    margin: 20px auto;
+    text-align: left;
+    width: 577;
+}
